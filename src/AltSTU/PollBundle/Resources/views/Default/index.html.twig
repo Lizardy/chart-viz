@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome to the poll</title>
+    </head>
+    <body>
+        <h1>{{ page_title }}</h1>
+
+        <ul id="questions_list">
+            {% for item in qlist %}
+                <li><a href="/Symfony/web/app_dev.php/questions/{{item.getId}}">{{ item.getTitle }}</a></li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

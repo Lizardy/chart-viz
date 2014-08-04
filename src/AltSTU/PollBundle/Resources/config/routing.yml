@@ -1,0 +1,50 @@
+alt_stu_poll_indexpage:
+    pattern: /demo/index
+    defaults: { _controller: AltSTUPollBundle:Demo:index}
+
+alt_stu_poll_demopage:
+    pattern: /demo/customize
+    defaults: { _controller: AltSTUPollBundle:Demo:customize}
+
+alt_stu_poll_vizpage:
+    pattern: /demo/viz
+    defaults: { _controller: AltSTUPollBundle:Demo:viz}
+
+alt_stu_poll_samplepage:
+    pattern: /demo/samples
+    defaults: { _controller: AltSTUPollBundle:Demo:sample}
+
+alt_stu_poll_visualpage:
+    pattern: /demo/visual
+    defaults: { _controller: AltSTUPollBundle:Demo:visual}
+
+alt_stu_poll_homepage:
+    pattern:  /questions/all
+    defaults: { _controller: AltSTUPollBundle:Default:index }
+
+alt_stu_poll_questionpage:
+    pattern:  /questions/{id}
+    defaults: { _controller: AltSTUPollBundle:Default:chooseQuestion} 
+    requirements:
+        id:  \d+
+
+alt_stu_poll_vote:
+    pattern: /questions/{id}/vote
+    defaults: { _controller: AltSTUPollBundle:Default:vote }
+    requirements:
+        id: \d+
+
+alt_stu_poll_results:
+    pattern: /results/{id}
+    defaults: { _controller: AltSTUPollBundle:Default:showResults}
+    requirements:
+        id:  \d+
+
+admin:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin

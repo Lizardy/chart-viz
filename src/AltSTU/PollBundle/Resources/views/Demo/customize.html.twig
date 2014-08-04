@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Плагин визуализации</title>
+        
+        <!-- Bootstrap -->
+        <link href="/Symfony/web/bootstrap/css/bootstrap.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <div class="container">
+        <div class="jumbotron">
+            <h1>{{ page_title }}</h1>
+        </div>
+        
+        
+        <form  method="post" {{ form_enctype(form) }}>
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td> {{ form_row(form.dataCollectionName) }} {{form_row(form.tx)}} {{form_row(form.ty)}} </td>
+                    <td> {{ form_row(form.formatName) }}  {{ form_row(form.pdfFormat) }} </td>
+                    <td> {{ form_row(form.typeDiagramName) }} </td>
+                    <td> {{ form_row(form.width) }} {{ form_row(form.height) }} </td>
+                    <td> {{ form_row(form.colorSchemeName) }} {{ form_row(form.fontName) }} </td>
+
+                    {{ form_rest(form) }}
+                </tr>
+            </table>
+            <input type="submit" value="Создать визуализацию"/>
+        </form>
+        <br/>
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <iframe src ="/Symfony/web/app_dev.php/demo/visual" width="100%" height="500" frameborder="0" scrolling="auto">
+                </iframe> 
+            </div>
+        </div>
+
+        </div>
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="/Symfony/web/bootstrap/js/bootstrap.min.js"></script>
+    </body>
+</html>

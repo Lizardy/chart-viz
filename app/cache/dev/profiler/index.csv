@@ -1,0 +1,8 @@
+cc909b,::1,POST,http://localhost/Symfony/web/app_dev.php/demo/customize,1403702556,
+af8eca,::1,GET,http://localhost/Symfony/web/app_dev.php/demo/visual,1403702559,
+ab788e,::1,GET,http://localhost/Symfony/web/app_dev.php/demo/visual,1403702559,af8eca
+0604c0,::1,GET,http://localhost/Symfony/web/app_dev.php/,1403715173,
+70b216,::1,GET,http://localhost/Symfony/web/app_dev.php/_configurator/,1403715206,
+03e4e4,::1,GET,http://localhost/Symfony/web/app_dev.php/_configurator/step/0,1403715208,
+ff3814,::1,POST,http://localhost/Symfony/web/app_dev.php/_configurator/step/0,1403715235,
+2207aa,::1,GET,http://localhost/Symfony/web/app_dev.php/_configurator/step/1,1403715241,
