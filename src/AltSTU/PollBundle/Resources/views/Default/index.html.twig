@@ -8,7 +8,7 @@
 
         <ul id="questions_list">
             {% for item in qlist %}
-                <li><a href="/Symfony/web/app_dev.php/questions/{{item.getId}}">{{ item.getTitle }}</a></li>
+                <li><a href="/app_dev.php/questions/{{item.getId}}">{{ item.getTitle }}</a></li>
             {% endfor %}
         </ul>
     </body>

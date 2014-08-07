@@ -44,7 +44,7 @@ class DefaultController extends Controller
 		if ($request->getMethod() == 'POST') 
 		{
                     //save new vote to db
-                    $form->bindRequest($request);
+                    $form->handleRequest($request);
                     $vote = new Vote();
                     $qoption = $form->get('options')->getData(); 
                     $vote->setQoption($qoption);
@@ -65,7 +65,11 @@ class DefaultController extends Controller
                     return $this->redirect($this->generateUrl("alt_stu_poll_vote",array('id' => $id))); 
                 }
 		
-		return $this->render('AltSTUPollBundle:Default:question.html.twig', array('form' => $form->createView(), 'question_title' => $qtitle,'question_text' => $qtext));
+		return $this->render('AltSTUPollBundle:Default:question.html.twig',
+            array(
+                'form' => $form->createView(),
+                'question_title' => $qtitle,'question_text' => $qtext
+            ));
 	}
         
         public function voteAction(Request $request,$id)
@@ -106,7 +110,7 @@ class DefaultController extends Controller
                 $collection[$qoption->getText()] = $qoption->getNumv(); //array($qoption->getText(),$qoption->getNumv());
             }
             
-            $font = 'c:/xampp/htdocs/Symfony/web/fonts/arial.ttf';
+            $font = '/home/lisa/Projects/chart-viz/web/fonts/arial.ttf';
             $color_category = 'category10';
             
             return $this->forward('AltSTU.viz.controller:picAction', 

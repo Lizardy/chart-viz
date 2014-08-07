@@ -34,7 +34,7 @@ class DemoController extends Controller
             $collection[$qoption->getText()] = $qoption->getNumv(); 
         }
 
-        $font = 'c:/xampp/htdocs/Symfony/web/fonts/arial.ttf';
+        $font = '/home/lisa/Projects/chart-viz/web/fonts/arial.ttf';//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         
         $session->set('data', $collection); //данные
         $session->set('format', 'pic');     //формат
@@ -124,7 +124,7 @@ class DemoController extends Controller
         
         if ($request->getMethod() == 'POST') 
 	{
-            $form->bindRequest($request);
+            $form->handleRequest($request);
             $customization = $form->getData();
             $quest = $form->get('dataCollectionName')->getData();
             
@@ -151,7 +151,7 @@ class DemoController extends Controller
                 }
             }*/
             
-            $font = 'c:/xampp/htdocs/Symfony/web/fonts/'.$customization->getFontName().'.ttf';
+            $font = '/home/lisa/Projects/chart-viz/web/fonts/'.$customization->getFontName().'.ttf';
             
             $session->set('format', $customization->getFormatName());
             $session->set('type', $customization->getTypeDiagramName());
@@ -164,7 +164,7 @@ class DemoController extends Controller
             $session->set('color', $customization->getColorSchemeName());
             $session->set('pdff', $customization->getPdfFormat());
             
-            $this->redirect($this->generateUrl("alt_stu_poll_visualpage"));
+            return $this->redirect($this->generateUrl("alt_stu_poll_visualpage"));
             
             //src ="/Symfony/web/app_dev.php/demo/viz?type=&w=&h=&color&pdff=&form=&collection=&font="
             /*$this->redirect($this->generateUrl("alt_stu_poll_vizpage",
